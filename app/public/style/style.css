@@ -1,0 +1,18 @@
+.jumbotron {
+	background-image: url("../images/gery.png");
+	font-family: "helvetica";
+}
+
+.start {
+	background-color: grey;
+}
+
+.wrapper {
+	background-color: #d3d3d3;
+}
+
+.submit {
+	background-color: grey;
+	color: white;
+	margin: 10px;
+}
