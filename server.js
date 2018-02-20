@@ -12,7 +12,7 @@ app.use(bodyParser.json());
 require("./app/routing/apiRoutes")(app);
 require("./app/routing/htmlRoutes")(app);
 
-app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + 'app/public'));
 
 
 
