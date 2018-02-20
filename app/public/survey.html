@@ -209,70 +209,74 @@
             if (validateForm() == true) {
           
             
-                     var newFriend = {
-                friendName: $("#friendName").val().trim(),
-                friendPicture: $("#pictureLink").val().trim(),
-                answers: [$(".q1").val(),
-                         $(".q2").val(),
-                         $(".q3").val(),
-                         $(".q4").val(),
-                         $(".q5").val(),
-                         $(".q6").val(),
-                         $(".q7").val(),
-                         $(".q8").val(),
-                         $(".q9").val(),
-                         $(".q10").val()
-                         ],
+                     var newFriend = 
+                     {
+
+                      friendName: $("#friendName").val().trim(),
+                      friendPicture: $("#pictureLink").val().trim(),
+                      answers: [$(".q1").val(),
+                               $(".q2").val(),
+                               $(".q3").val(),
+                               $(".q4").val(),
+                               $(".q5").val(),
+                               $(".q6").val(),
+                               $(".q7").val(),
+                               $(".q8").val(),
+                               $(".q9").val(),
+                               $(".q10").val()
+                               ],
               
  
-          };
+                      };
 
-    }
+                      fetch("/api/friends", 
+                      {
+
+                      method: 'POST', // or 'PUT'
+                      body: JSON.stringify(newFriend), 
+                      headers: new Headers({
+                      'Content-Type': 'application/json'
+                                          })
+                      }).then(res => res.json(newFriend))
+
+
+                      .catch(error => console.error('Error:', error))
+
+                      .then(function(response)
+                            {
+
+                            $(".modalName").text(response.friendName);
+                            $(".modalPicture").attr("src", response.friendPicture);
+                            $('#myModal').modal();
+                            console.log('Success:', response);
+
+                      });
+
+    
+
+ 
+                      $("#friendName").val("");
+                      $("#pictureLink").val("");
+                      $(".q1").val("");
+                      $(".q2").val("");
+                      $(".q3").val("");
+                      $(".q4").val("");
+                      $(".q5").val("");
+                      $(".q6").val("");
+                      $(".q7").val("");
+                      $(".q8").val("");
+                      $(".q9").val("");
+                      $(".q10").val("");
+
+
+
+              }
 
     else {
       alert("Please fill out the form");
     }
 
-          fetch("/api/friends", 
-          {
-
-          method: 'POST', // or 'PUT'
-          body: JSON.stringify(newFriend), 
-          headers: new Headers({
-          'Content-Type': 'application/json'
-                              })
-          }).then(res => res.json(newFriend))
-
-
-          .catch(error => console.error('Error:', error))
-
-          .then(function(response)
-                {
-
-                $(".modalName").text(response.friendName);
-                $(".modalPicture").attr("src", response.friendPicture);
-                $('#myModal').modal();
-                console.log('Success:', response);
-
-                });
-
-    
-
- 
-          $("#friendName").val("");
-          $("#pictureLink").val("");
-          $(".q1").val("");
-          $(".q2").val("");
-          $(".q3").val("");
-          $(".q4").val("");
-          $(".q5").val("");
-          $(".q6").val("");
-          $(".q7").val("");
-          $(".q8").val("");
-          $(".q9").val("");
-          $(".q10").val("");
-
-
+          
 
 
     });

@@ -19,7 +19,7 @@ app.use(express.static(__dirname + '/public'));
 
 
 app.listen(PORT, function() {
-	console.log("Server is listening", PORT);
+	console.log("Server is listening at port", PORT);
 });
 
 

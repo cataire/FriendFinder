@@ -5,7 +5,7 @@ An app that allows user to find a perfect match among Frozen characters.
 
 ### Technologies:
 
-The app uses Node.js and Express
+The app uses Node.js and Express. Please install Node Modules folder to use the app.
 
 ### Using the app
 
