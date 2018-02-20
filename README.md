@@ -9,4 +9,4 @@ The app uses Node.js and Express
 
 ### Using the app
 
-After clicking "Take survey" button the user can answer 10 questions. After clicking a Submit button the app calculates the perfect match for the user.
+After clicking "Take survey" button the user can answer 10 questions. After clicking a Submit button the app calculates the perfect match for the user among charcters of the Disney movie Frozen.
